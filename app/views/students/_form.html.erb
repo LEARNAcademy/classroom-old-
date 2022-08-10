@@ -1,0 +1,28 @@
+<%= form_with(model: student) do |form| %>
+  <%= render "shared/error_messages", resource: form.object %>
+
+  <div class="form-group">
+    <%= form.label :absences %>
+    <%= form.text_field :absences, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :user_id %>
+    <%= form.text_field :user_id, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :cohort_id %>
+    <%= form.text_field :cohort_id, class: "form-control" %>
+  </div>
+
+  <div>
+    <%= form.button button_text(form.send(:submit_default_value)), class: "btn btn-primary" %>
+
+    <% if form.object.new_record? %>
+      <%= link_to t("cancel"), students_path, class: "btn btn-white" %>
+    <% else %>
+      <%= link_to t("cancel"), student_path(@student), class: "btn btn-white" %>
+    <% end %>
+  </div>
+<% end %>
