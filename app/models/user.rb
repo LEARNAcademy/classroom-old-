@@ -26,6 +26,7 @@
 #  otp_required_for_login :boolean
 #  otp_secret             :string
 #  preferred_language     :string
+#  preferred_name         :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
 #  reset_password_token   :string
