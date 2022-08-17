@@ -2,7 +2,14 @@
   <div class="my-8">
     <h1><%= t(".title") %></h1>
 
+<div class="alert mb-2" role="alert">
+    <div>
+      <p class="mb-2">Welcome <%= [(current_user)] %>/p>
+    </div>
+</div>
+
     <p class="mb-2">This is the homepage for logged in users.</p>
-    <p>You can customize this page in <code>app/views/dashboard/show.html.erb</code></p>
+    <p class="mb-2">You can customize this page and welcome user on <code>app/views/dashboard/show.html.erb</code></p>
+    <p class="mb2">You can customize Student Application text on <code>config/locales/en.yml</code></p>
   </div>
 </div>
