@@ -101,5 +101,7 @@ Rails.application.routes.draw do
   end
 
   # Public marketing homepage
-  root to: "static#index"
+  devise_scope :user do
+    root to: "users/sessions#new"
+  end
 end
