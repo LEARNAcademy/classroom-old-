@@ -165,7 +165,7 @@ en:
 
   dashboard:
     show:
-      title: "Dashboard"
+      title: "Student Application"
 
   payments:
     success: "Thanks for subscribing!"
