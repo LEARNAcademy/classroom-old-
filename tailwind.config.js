@@ -31,6 +31,10 @@ module.exports = {
         danger: colors.red,
         "code-400": "#fefcf9",
         "code-600": "#3c455b",
+        "learngray": "#313133",
+        "learnpurple": "#A670AF",
+        "learnblack": "#101820",
+        "learngreen": "#6FBD73",
       },
       fontFamily: {
         sans: ['Inter', ...defaultTheme.fontFamily.sans],
