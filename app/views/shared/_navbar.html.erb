@@ -14,9 +14,10 @@
 
   <div class="flex-grow hidden w-full pb-6 lg:flex lg:w-auto lg:pb-0" data-toggle-target="toggleable">
     <div class="lg:flex-grow">
+  <% if user_signed_in? %>
       <%= render "shared/left_nav" %>
+<% end %>
     </div>
-
     <div>
       <%= render "shared/right_nav" %>
       <% if user_signed_in? %>

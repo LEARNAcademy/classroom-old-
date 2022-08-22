@@ -145,16 +145,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_213144) do
     t.index ["recipient_type", "recipient_id"], name: "index_notifications_on_recipient_type_and_recipient_id"
   end
 
-  create_table "students", force: :cascade do |t|
-    t.float "absences"
-    t.bigint "user_id", null: false
-    t.bigint "cohort_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["cohort_id"], name: "index_students_on_cohort_id"
-    t.index ["user_id"], name: "index_students_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -203,6 +193,4 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_15_213144) do
   add_foreign_key "accounts", "users", column: "owner_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "api_tokens", "users"
-  add_foreign_key "students", "cohorts"
-  add_foreign_key "students", "users"
 end
