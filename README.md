@@ -61,3 +61,12 @@ Fill out the Pull Request template.
 ### 📚 Resources and References
 
 Project in managed in Notion. Reach out to a member of the team to gain access.
+
+### 💫 Development Useful Commands
+
+- If you're having issues seeing an updated page
+
+   ```
+   $ yarn build:css
+   $ yarn build
+   ```
