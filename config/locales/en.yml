@@ -192,13 +192,13 @@ en:
     privacy:
       title: "Privacy Policy"
     terms:
-      title: "Terms Of Service"
+      title: "Terms & Conditions"
 
   shared:
     footer:
       about: "About Us"
       privacy: "Privacy Policy"
-      terms: "Terms of Service"
+      terms: "Terms of Use"
     account_navbar:
       profile: "Profile"
       password: "Password"
