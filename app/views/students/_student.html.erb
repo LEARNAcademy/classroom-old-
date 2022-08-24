@@ -7,4 +7,8 @@
     <p class="text-sm font-medium text-gray-500">Cohort</p>
     <%= Cohort.where(id: student.cohort_id).pluck(:cohort_name)[0] %>
   </div>
+  <div class="mb-4">
+    <p class="text-sm font-medium text-gray-500">Absences</p>
+    <%= student.absences %>
+  </div>
 </div>

@@ -2,9 +2,14 @@ require "rails_helper"
 
 RSpec.describe "students/show", type: :view do
   before(:each) do
+    @cohort = assign(:cohort, Cohort.create(
+      id: 1
+    ))
     @student = assign(:student, Student.create!(
       cohort: nil,
-      absences: 2
+      absences: 1,
+      cohort_id: 1,
+      pref_name: "John Doe"
     ))
   end
 

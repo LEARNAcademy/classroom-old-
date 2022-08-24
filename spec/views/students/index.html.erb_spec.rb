@@ -2,14 +2,21 @@ require "rails_helper"
 
 RSpec.describe "students/index", type: :view do
   before(:each) do
+    assign(:cohort, Cohort.create!(
+      id: 1
+    ))
     assign(:students, [
       Student.create!(
         cohort: nil,
-        absences: 2
+        absences: 2,
+        cohort_id: 1,
+        pref_name: "John Doe"
       ),
       Student.create!(
         cohort: nil,
-        absences: 2
+        absences: 2,
+        cohort_id: 1,
+        pref_name: "Jane Doe"
       )
     ])
   end
