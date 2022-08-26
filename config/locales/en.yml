@@ -192,7 +192,7 @@ en:
     privacy:
       title: "Privacy Policy"
     terms:
-      title: "Terms of Service"
+      title: "Terms & Conditions"
     conduct:
       title: "Code of Conduct"
 
@@ -200,7 +200,7 @@ en:
     footer:
       about: "About Us"
       privacy: "Privacy Policy"
-      terms: "Terms of Service"
+      terms: "Terms of Use"
       conduct: "Code of Conduct"
     account_navbar:
       profile: "Profile"
