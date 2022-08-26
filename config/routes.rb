@@ -87,6 +87,7 @@ Rails.application.routes.draw do
     get :about
     get :terms
     get :privacy
+    get :conduct
   end
 
   post :sudo, to: "users/sudo#create"

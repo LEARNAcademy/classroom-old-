@@ -193,12 +193,15 @@ en:
       title: "Privacy Policy"
     terms:
       title: "Terms & Conditions"
+    conduct:
+      title: "Code of Conduct"
 
   shared:
     footer:
       about: "About Us"
       privacy: "Privacy Policy"
       terms: "Terms of Use"
+      conduct: "Code of Conduct"
     account_navbar:
       profile: "Profile"
       password: "Password"
