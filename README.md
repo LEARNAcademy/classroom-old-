@@ -61,3 +61,29 @@ Fill out the Pull Request template.
 ### 📚 Resources and References
 
 Project in managed in Notion. Reach out to a member of the team to gain access.
+
+
+### Jumpstart Framework
+
+Once a scaffold has been generated for a model, a directory for that model will be generated with views, controllers, and specs. The views have partials (usually starts with an underscore _ ) that are rendered and must be modified to specification.
+
+The controllers need to be modified to handle newly generated columns otherwise turbo_stream will be unable to access those properties.
+
+The specs need to be modified so that forms with changed inputs (such as select) have different assertions.
+
+The general workflow can be broken down into 3 steps.
+
+- The specs
+
+app/spec/models
+app/spec/requests
+app/spec/views
+
+- The view page
+
+app/views/your_model
+
+- The controller
+
+app/controllers/users/your_model.rb
+

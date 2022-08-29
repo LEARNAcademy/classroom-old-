@@ -17,7 +17,7 @@
     <%= link_to t("shared.scaffold.new.title", model: "Student"), new_student_path, class: "btn btn-white" %>
   </div>
 
-  <%= tag.div id: ("students" if first_page?), class: "bg-white rounded-md shadow p-6 space-y-8" do %>
+  <%= tag.div id: ("students" if first_page?), class: "bg-white rounded-md   shadow p-6 space-y-8" do %>
     <%= render partial: "students/index", collection: @students, as: :student, cached: true %>
 
     <div class="hidden only:flex flex-col items-center justify-between lg:flex-row">

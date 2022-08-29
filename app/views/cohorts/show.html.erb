@@ -11,12 +11,16 @@
     <%= link_to t("edit"), edit_cohort_path(@cohort), class: "btn btn-white" %>
   </div>
 
-  <div class="p-8 bg-white rounded shadow">
-    <%= render @cohort %>
-  </div>
+
 
   <div class="p-8 bg-white rounded shadow">
-    <%= render partial: "students/index", collection: Student.where(cohort_id: @cohort.id), as: :student, cached: true %>
+    <div class="text-2xl"> Students </div>
+    
+    <% Student.where(cohort_id: @cohort.id).map do |student|%>
+      <div> <%= student.pref_name  %> </div>
+      <div> <%= link_to "View", student, class: "btn btn-white" %> </div>
+    <% end %>
+
   </div>
     
 </div>

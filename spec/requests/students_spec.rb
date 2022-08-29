@@ -42,7 +42,10 @@ RSpec.describe "/students", type: :request do
 
   describe "GET /new" do
     it "renders a successful response" do
-      get new_student_url
+      # This student needed to be created for the test because there was no other way to authenticate login status for now. Since this application is a work in progress and the database models have not been finalized, this test will need to be modified at a later time.
+      student = Student.create! valid_attributes
+      get new_student_url(student)
+      p response
       expect(response).to be_successful
     end
   end

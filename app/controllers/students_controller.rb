@@ -7,6 +7,7 @@ class StudentsController < ApplicationController
 
   # GET /students
   def index
+    
     @pagy, @students = pagy(Student.sort_by_params(params[:sort], sort_direction))
 
     # Uncomment to authorize with Pundit
@@ -74,7 +75,7 @@ class StudentsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_student
     @student = Student.find(params[:id])
-
+    @cohort = Cohort.where(id: @student.cohort_id)
     # Uncomment to authorize with Pundit
     # authorize @student
   rescue ActiveRecord::RecordNotFound
