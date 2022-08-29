@@ -39,11 +39,12 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_22_220343) do
   end
 
   create_table "accounts", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.bigint "owner_id"
     t.boolean "personal", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "extra_billing_info"
     t.string "domain"
     t.string "subdomain"
     t.index ["owner_id"], name: "index_accounts_on_owner_id"

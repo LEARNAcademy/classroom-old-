@@ -6,13 +6,14 @@ The purpose of the LEARN Academy student application is to streamline workflow a
 
 - Clone the repository
 - Install dependencies by running:
+  - `brew install redis`
   - `bundle`
   - `yarn`
   - `rails db:setup`
 
 ### 🏁 Start the App
 
-Start the server by running `rails s`
+Start the server by running `yarn build`
 
 ### 🚗 Testing
 
@@ -62,7 +63,6 @@ Fill out the Pull Request template.
 
 Project in managed in Notion. Reach out to a member of the team to gain access.
 
-
 ### Jumpstart Framework
 
 Once a scaffold has been generated for a model, a directory for that model will be generated with views, controllers, and specs. The views have partials (usually starts with an underscore _ ) that are rendered and must be modified to specification.
@@ -87,3 +87,13 @@ app/views/your_model
 
 app/controllers/users/your_model.rb
 
+### 💫 Development Useful Commands
+
+- If you're having issues seeing an updated page
+
+   ```
+   $ yarn testbuild:css
+   $ yarn testbuild
+   ```
+   
+  However this should be resolved simply by shutting down your server and running `yarn build` again
