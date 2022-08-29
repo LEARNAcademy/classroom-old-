@@ -6,13 +6,14 @@ The purpose of the LEARN Academy student application is to streamline workflow a
 
 - Clone the repository
 - Install dependencies by running:
+  - `brew install redis`
   - `bundle`
   - `yarn`
   - `rails db:setup`
 
 ### 🏁 Start the App
 
-Start the server by running `rails s`
+Start the server by running `yarn build`
 
 ### 🚗 Testing
 
@@ -67,6 +68,8 @@ Project in managed in Notion. Reach out to a member of the team to gain access.
 - If you're having issues seeing an updated page
 
    ```
-   $ yarn build:css
-   $ yarn build
+   $ yarn testbuild:css
+   $ yarn testbuild
    ```
+   
+  However this should be resolved simply by shutting down your server and running `yarn build` again
