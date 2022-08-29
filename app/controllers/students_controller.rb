@@ -7,7 +7,6 @@ class StudentsController < ApplicationController
 
   # GET /students
   def index
-    
     @pagy, @students = pagy(Student.sort_by_params(params[:sort], sort_direction))
 
     # Uncomment to authorize with Pundit

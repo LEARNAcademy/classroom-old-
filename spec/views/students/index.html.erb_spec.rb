@@ -8,13 +8,11 @@ RSpec.describe "students/index", type: :view do
     ))
     assign(:students, [
       Student.create!(
-        
         absences: 2,
         cohort_id: 1,
         pref_name: "John Doe"
       ),
       Student.create!(
-        
         absences: 2,
         cohort_id: 1,
         pref_name: "Jane Doe"
