@@ -6,12 +6,21 @@
     <h1 class="h3">
       <%= link_to "Cohorts", cohorts_path, class: "text-black" %>
       <span class="text-gray-400 font-light mx-2">\</span>
-      Cohort #<%= @cohort.id %>
+      <%= @cohort.cohort_name %>
     </h1>
     <%= link_to t("edit"), edit_cohort_path(@cohort), class: "btn btn-white" %>
   </div>
 
+
+
   <div class="p-8 bg-white rounded shadow">
-    <%= render @cohort %>
+    <div class="text-2xl"> Students </div>
+    
+    <% Student.where(cohort_id: @cohort.id).map do |student|%>
+      <div> <%= student.pref_name  %> </div>
+      <div> <%= link_to "View", student, class: "btn btn-white" %> </div>
+    <% end %>
+
   </div>
+    
 </div>
