@@ -89,11 +89,8 @@ app/controllers/users/your_model.rb
 
 ### 💫 Development Useful Commands
 
-- If you're having issues seeing an updated page
+- If you're not seeing an updated page mid development.
 
    ```
-   $ yarn testbuild:css
-   $ yarn testbuild
+   $ yarn build:update
    ```
-   
-  However this should be resolved simply by shutting down your server and running `yarn build` again
