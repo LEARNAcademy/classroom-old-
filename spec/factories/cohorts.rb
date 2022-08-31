@@ -4,6 +4,7 @@
 #
 #  id          :bigint           not null, primary key
 #  cohort_name :string
+#  year        :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
 #

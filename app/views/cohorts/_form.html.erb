@@ -5,6 +5,10 @@
     <%= form.label :cohort_name %>
     <%= form.text_field :cohort_name, class: "form-control" %>
   </div>
+  <div class="form-group">
+    <%= form.label :year %>
+    <%= form.select :year, (Date.today.year - 10) ... (Date.today.year + 10), selected: Time.current.year, class: "form-control" %>
+  </div>
 
   <div>
     <%= form.button button_text(form.send(:submit_default_value)), class: "btn btn-primary" %>
