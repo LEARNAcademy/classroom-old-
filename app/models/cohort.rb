@@ -12,7 +12,7 @@ class Cohort < ApplicationRecord
   has_many :students
   validates :year, numericality: true
   validates :cohort_name, presence: true
-  validates :cohort_name, length: { maximum: 15 }
+  validates :cohort_name, length: {maximum: 15}
   # Broadcast changes in realtime with Hotwire
   after_create_commit -> { broadcast_prepend_later_to :cohorts, partial: "cohorts/index", locals: {cohort: self} }
   after_update_commit -> { broadcast_replace_later_to self }

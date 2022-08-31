@@ -79,6 +79,7 @@ class StudentsController < ApplicationController
   rescue ActiveRecord::RecordNotFound
     redirect_to students_path
   end
+
   # Only allow a list of trusted parameters through.
   def student_params
     params.require(:student).permit(:cohort_id, :pref_name, :absences)
