@@ -3,7 +3,8 @@ require "rails_helper"
 RSpec.describe "cohorts/edit", type: :view do
   before(:each) do
     @cohort = assign(:cohort, Cohort.create!(
-      cohort_name: "MyString"
+      cohort_name: "Cohort Name",
+      year: 1990
     ))
   end
 

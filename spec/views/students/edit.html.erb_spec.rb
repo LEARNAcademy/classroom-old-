@@ -3,7 +3,9 @@ require "rails_helper"
 RSpec.describe "students/edit", type: :view do
   before(:each) do
     @cohort = assign(:cohort, Cohort.create(
-      id: 1
+      id: 1,
+      cohort_name: "Cohort Name",
+      year: 1990
     ))
     @student = assign(:student, Student.create!(
       cohort: nil,

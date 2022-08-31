@@ -4,7 +4,8 @@ RSpec.describe "students/index", type: :view do
   before(:each) do
     assign(:cohort, Cohort.create!(
       id: 1,
-      cohort_name: "Charlie"
+      cohort_name: "Charlie",
+      year: 1990
     ))
     assign(:students, [
       Student.create!(
