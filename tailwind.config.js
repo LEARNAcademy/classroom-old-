@@ -37,7 +37,7 @@ module.exports = {
         "learngreen": "#6FBD73",
       },
       fontFamily: {
-        sans: ['Inter', ...defaultTheme.fontFamily.sans],
+        sans: ['Gesta', ...defaultTheme.fontFamily.sans],
       },
     },
   },
