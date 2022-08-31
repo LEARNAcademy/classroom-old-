@@ -74,7 +74,6 @@ class StudentsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_student
     @student = Student.find(params[:id])
-    @cohort = Cohort.where(id: @student.cohort_id)
     # Uncomment to authorize with Pundit
     # authorize @student
   rescue ActiveRecord::RecordNotFound

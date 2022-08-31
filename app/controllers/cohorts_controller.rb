@@ -83,7 +83,7 @@ class CohortsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def cohort_params
-    params.require(:cohort).permit(:cohort_name)
+    params.require(:cohort).permit(:cohort_name, :year)
 
     # Uncomment to use Pundit permitted attributes
     # params.require(:cohort).permit(policy(@cohort).permitted_attributes)
