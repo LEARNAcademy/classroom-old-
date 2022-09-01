@@ -37,11 +37,11 @@ button[disabled]        .when-enabled { display: none; }
   }
 
   .btn-primary {
-    @apply bg-blue-600 text-white focus:ring-blue-500;
+    @apply bg-learnpurple text-white focus:ring-blue-500;
 
     &:hover,
     &:focus {
-      @apply bg-blue-500 text-white;
+      @apply bg-learnpurplehover text-white;
     }
 
     &.outline {
