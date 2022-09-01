@@ -1,4 +1,4 @@
-<%= content_for :title, "#{@cohort.cohort_name} Cohort" %>
+<%= content_for :title, "#{@cohort.cohort_name} #{@cohort.year}" %>
 <%= turbo_stream_from @cohort %>
 
 <div class="container px-4 mx-auto my-8">
