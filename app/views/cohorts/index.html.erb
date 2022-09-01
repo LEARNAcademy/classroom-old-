@@ -13,14 +13,13 @@
       </div>
     </div>
 
-    <%= link_to t("shared.scaffold.new.title", model: "Cohort"), new_cohort_path, class: "btn btn-white" %>
+    <%= link_to t("shared.scaffold.new.title", model: "Cohort"), new_cohort_path, class: "btn btn-primary" %>
   </div>
 
   <%= tag.div id: ("cohorts" if first_page?), class: "bg-white rounded-md shadow p-6 space-y-8" do %>
     <%= render partial: "cohorts/index", collection: @cohorts, as: :cohort, cached: true %>
 
     <div class="hidden only:flex flex-col items-center justify-between lg:flex-row">
-      <%= image_tag "empty.svg", class: "mb-4 lg:w-1/2" %>
       <div class="flex-1 text-center">
         <p class="mb-4 h3">Create your first Cohort</p>
         <%= link_to t("shared.scaffold.new.title", model: "Cohort"), new_cohort_path, class: "btn btn-primary" %>

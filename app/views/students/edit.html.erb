@@ -1,4 +1,4 @@
-<%= content_for :title, t("shared.scaffold.edit.title", model: "Student") %>
+<%= content_for :title, "Edit #{@student.pref_name}, #{@student.cohort.cohort_name} #{@student.cohort.year}" %>
 
 <div class="container mx-auto px-4 my-8">
   <div class="flex items-center justify-between mb-4">
