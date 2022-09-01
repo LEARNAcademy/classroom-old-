@@ -1,4 +1,4 @@
-<%= content_for :title, "Students ##{@student.id}" %>
+<%= content_for :title, "#{@student.pref_name}, #{@student.cohort.cohort_name} #{@student.cohort.year}" %>
 <%= turbo_stream_from @student %>
 
 <div class="container px-4 mx-auto my-8">
