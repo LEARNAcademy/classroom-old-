@@ -15,7 +15,7 @@ jobs:
       - name: Scan for accessibility issues
         uses: microsoft/accessibility-insights-action@v3
         with:
-          url: http://localhost:3000/
+          url: https://learn-student.onrender.com/
       - name: Upload report artifact
         if: success() || failure()
         uses: actions/upload-artifact@v3
