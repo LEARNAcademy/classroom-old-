@@ -63,6 +63,10 @@ Fill out the Pull Request template.
 
 Project in managed in Notion. Reach out to a member of the team to gain access.
 
+You can view more about the accessability workflow for GitHub Actions here:
+- [accessibility insights action](https://github.com/microsoft/accessibility-insights-action/blob/main/docs/gh-action-usage.md)
+- [accessibility insights action usage](https://github.com/microsoft/accessibility-insights-action/blob/main/docs/gh-action-usage.md)
+
 ### Jumpstart Framework
 
 Once a scaffold has been generated for a model, a directory for that model will be generated with views, controllers, and specs. The views have partials (usually starts with an underscore _ ) that are rendered and must be modified to specification.

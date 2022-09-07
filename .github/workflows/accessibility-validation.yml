@@ -16,6 +16,7 @@ jobs:
         uses: microsoft/accessibility-insights-action@v3
         with:
           url: https://learn-student.onrender.com/
+          fail-on-accessibility-error: false
       - name: Upload report artifact
         if: success() || failure()
         uses: actions/upload-artifact@v3
