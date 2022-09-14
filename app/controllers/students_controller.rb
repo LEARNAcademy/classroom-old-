@@ -73,7 +73,7 @@ class StudentsController < ApplicationController
 
   # Use callbacks to share common setup or constraints between actions.
   def set_student
-    @student = Student.find(params[:id]).merge(cohort_name: Student.find(params[:id]).cohort.cohort_name)
+    @student = Student.find(params[:id])
     # Uncomment to authorize with Pundit
     # authorize @student
   rescue ActiveRecord::RecordNotFound

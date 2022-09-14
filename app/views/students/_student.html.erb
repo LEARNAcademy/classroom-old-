@@ -2,7 +2,7 @@
     <%= student.pref_name %>
   </td>
   <td>
-    <%= Cohort.where(id: student.cohort_id).pluck(:cohort_name)[0] %>
+    <%= student.cohort.cohort_name %>
   </td>
   <td>
     <%= student.absences %>
