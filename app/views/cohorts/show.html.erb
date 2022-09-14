@@ -1,6 +1,7 @@
 <%= content_for :title, "#{@cohort.cohort_name} #{@cohort.year}" %>
 <%= turbo_stream_from @cohort %>
 
+
 <div class="container px-4 mx-auto my-8">
   <div class="flex items-center justify-between mb-4">
     <h1 class="h3">
@@ -18,10 +19,22 @@
   <div class="p-8 bg-white rounded shadow">
     <div class="text-2xl"> Students </div>
     
-    <% Student.where(cohort_id: @cohort.id).map do |student|%>
-      <div> <%= student.pref_name  %> </div>
-      <div> <%= link_to "View", student, class: "btn btn-white" %> </div>
-    <% end %>
+    <table class="border-separate border-spacing-x-10 text-center">
+      <thead>
+        <th> <%= sortable @students, :pref_name, "Name", class: "text-gray-700 mr-1" %></th>
+        <th> <%= sortable @students, :absences, "Absences", class: "text-gray-700 mr-1" %></th>
+        <th></th>
+      </thead>
+      <tbody>
+        <% @students.map do |student|%>
+          <tr>
+            <td> <%= student.pref_name  %> </td>
+            <td> <%= student.absences  %> </td>
+            <td> <%= link_to t("edit"), edit_student_path(student), class: "btn btn-white" %> </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
 
   </div>
     
