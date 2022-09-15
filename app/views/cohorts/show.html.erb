@@ -10,7 +10,28 @@
       <span class="text-gray-400 font-light mx-2">\</span>
       <%= @cohort.year%>
     </h1>
-    <%= link_to t("edit"), edit_cohort_path(@cohort), class: "btn btn-white" %>
+    <div>
+      <label class="btn btn-primary">
+        <input type="file" accept=".csv" class="hidden"><%=t("import_student_csv")%></input>
+      </label>
+
+      <%= form_with url: import_students_path, method: :post do |form| %>
+        <%= form.file_field :file, accept: ".csv"%>
+        <%= form.button "Submit" %>
+      <% end %>
+
+      <%# <%= form_with model: @student do |form| %> 
+        <%# <%= form.file_field( { :action => 'import' }, :multipart => true ) %> 
+        <%# <%= form.submit :Submit %> 
+      <%# <% end %> 
+
+      <%# <%= form_tag( { :action => 'import' }, :multipart => true ) do%>
+        <%# REAL Upload file: <%= file_field( "form", "file" ) %>
+        <%# <%= submit_tag( "Upload file" ) %>
+      <%# <% end %>
+
+      <%= link_to t("edit"), edit_cohort_path(@cohort), class: "btn btn-white" %>
+    </div>
   </div>
 
 

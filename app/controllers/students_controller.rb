@@ -25,6 +25,23 @@ class StudentsController < ApplicationController
     # authorize @student
   end
 
+  def import
+    require 'csv'
+    file = params[:file]
+    return redirect_to cohorts_path, notice: 'You can only post CSV files' unless file.content_type == 'text/csv'
+    
+    file = File.open(file)
+    csv = CSV.parse(file, headers: true, col_sep: ';')
+    csv.each do |row|
+      student_hash = {}
+      student_hash[:pref_name] = row['Preferred Name']
+      student_hash[:absences] = row['Absences']
+      Student.create(student_hash)
+      p student_hash
+    end
+    redirect_to cohorts_path, notice: 'Students Successfully Imported'
+  end
+
   # GET /students/1/edit
   def edit
   end
