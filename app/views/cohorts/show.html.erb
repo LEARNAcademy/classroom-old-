@@ -11,7 +11,7 @@
       <%# <span class="text-gray-400 font-light mx-2">\</span> %>
       <%= @cohort.year%>
     </h1>
-    <%= link_to t("edit"), edit_cohort_path(@cohort), class: "btn btn-white" %>
+    <%= link_to "Edit Cohort", edit_cohort_path(@cohort), class: "btn btn-white" %>
   </div>
 
 
@@ -28,9 +28,8 @@
       <tbody>
         <% @students.map do |student|%>
           <tr>
-            <td> <%= student.pref_name  %> </td>
+            <td> <%= link_to student.pref_name, edit_student_path(student)  %> </td>
             <td> <%= student.absences  %> </td>
-            <td> <%= link_to t("edit"), edit_student_path(student), class: "btn btn-white" %> </td>
           </tr>
         <% end %>
       </tbody>
