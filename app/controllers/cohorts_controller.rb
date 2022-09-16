@@ -6,16 +6,16 @@ class CohortsController < ApplicationController
   # rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   # GET /cohorts
-  def index  
+  def index
     @pagy, @cohorts = pagy(Cohort.sort_by_params(params[:sort], sort_direction))
-    
+
     # Uncomment to authorize with Pundit
     # authorize @cohorts
   end
 
   # GET /cohorts/1 or /cohorts/1.json
   def show
-      @pagy, @students = pagy(@students.sort_by_params(params[:sort], sort_direction))
+    @pagy, @students = pagy(@students.sort_by_params(params[:sort], sort_direction))
   end
 
   # GET /cohorts/new
