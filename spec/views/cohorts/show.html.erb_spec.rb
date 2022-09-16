@@ -8,8 +8,8 @@ RSpec.describe "cohorts/show", type: :view do
     ))
   end
 
-  it "renders attributes in <p>" do
-    render
+  it "renders attributes" do
+    render @cohort
     expect(rendered).to match(/Cohort Name/)
   end
 end

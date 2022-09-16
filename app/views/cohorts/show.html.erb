@@ -21,7 +21,6 @@
       <thead>
         <th> <%= sortable @cohort, :pref_name, "Name", class: "text-gray-700 mr-1" %></th>
         <th> <%= sortable @cohort, :absences, "Absences", class: "text-gray-700 mr-1" %></th>
-        <th></th>
       </thead>
       <tbody>
         <% @students.map do |student|%>
