@@ -33,7 +33,8 @@
 
 en:
   are_you_sure: "Are you sure?"
-  back: "Back"
+  back: 
+    current_cohort: "Back to Cohort"
   cancel: "Cancel"
   create_an_account_first: "Please create an account first."
   delete: "Delete"
