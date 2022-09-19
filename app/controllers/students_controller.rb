@@ -47,6 +47,14 @@ class StudentsController < ApplicationController
     end
   end
 
+  def import
+    file = params[:file]
+    cohort = params[:current_cohort_id]
+    return redirect_to cohorts_path, notice: 'You can only post CSV files' unless file.content_type == 'text/csv'
+    CsvStudentsImport.new.call(file, cohort)
+    redirect_to request.referrer, notice: 'Students Successfully Imported'
+  end
+
   # PATCH/PUT /students/1 or /students/1.json
   def update
     respond_to do |format|
