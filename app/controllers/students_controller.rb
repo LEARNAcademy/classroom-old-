@@ -25,13 +25,6 @@ class StudentsController < ApplicationController
     # authorize @student
   end
 
-  def import
-    file = params[:file]
-    return redirect_to cohorts_path, notice: 'You can only post CSV files' unless file.content_type == 'text/csv'
-    CsvStudentsImport.new.call(file)
-    redirect_to request.referrer, notice: 'Students Successfully Imported'
-  end
-
   # GET /students/1/edit
   def edit
   end
