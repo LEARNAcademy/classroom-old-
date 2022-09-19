@@ -15,7 +15,7 @@
         <input type="file" accept=".csv" class="hidden"><%=t("import_student_csv")%></input>
       </label>
 
-      <%= form_with url: import_students_path, method: :post do |form| %>
+      <%= form_with url: import_students_path, method: :post, multipart: true do |form| %>
         <%= form.file_field :file, accept: ".csv"%>
         <%= form.button "Submit" %>
       <% end %>
