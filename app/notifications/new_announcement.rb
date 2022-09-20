@@ -15,7 +15,7 @@ class NewAnnouncement < ApplicationNotification
 
   # Add required params
   #
-  param :post
+  param :announcement, :user
 
   # Define helper methods to make rendering easier.
   #
