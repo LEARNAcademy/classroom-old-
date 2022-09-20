@@ -22,6 +22,7 @@ RSpec.describe "assessments/new", type: :view do
       reviewer: "MyString",
       notes: "MyText"
     ))
+    Assessment.create! valid_attributes
   end
 
   it "renders new assessment form" do
