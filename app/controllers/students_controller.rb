@@ -33,7 +33,7 @@ class StudentsController < ApplicationController
   # POST /students or /students.json
   def create
     @student = Student.new(student_params)
-    
+
     # Uncomment to authorize with Pundit
     # authorize @student
 
@@ -83,7 +83,7 @@ class StudentsController < ApplicationController
 
   def create_assessments
     (0..5).map do |i|
-      @student.assessments.create({week: i+1,comprehension: 0,status: 0,reviewer: "N/A",notes: "N/A"})
+      @student.assessments.create({week: i + 1, comprehension: 0, status: 0, reviewer: "N/A", notes: "N/A"})
     end
   end
 
