@@ -22,15 +22,12 @@ RSpec.describe "assessments/new", type: :view do
       reviewer: "MyString",
       notes: "MyText"
     ))
-    assessment = Assessment.create! valid_attributes
   end
-
 
   it "renders new assessment form" do
     render
 
     assert_select "form[action=?][method=?]", assessments_path, "post" do
-
       # These two are probably uneeded because they are created upon student creation with default values and will not be available for edit
       # assert_select "input[name=?]", "assessment[student_id]"
       # assert_select "input[name=?]", "assessment[week]"

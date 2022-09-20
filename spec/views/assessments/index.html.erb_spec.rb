@@ -22,9 +22,7 @@ RSpec.describe "assessments/index", type: :view do
       reviewer: "MyString",
       notes: "MyText"
     ))
-    assessment = Assessment.create! valid_attributes
   end
-
 
   it "renders a list of assessments" do
     render

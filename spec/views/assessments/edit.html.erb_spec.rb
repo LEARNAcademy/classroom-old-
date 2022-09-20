@@ -22,14 +22,13 @@ RSpec.describe "assessments/edit", type: :view do
       reviewer: "MyString",
       notes: "MyText"
     ))
-    assessment = Assessment.create! valid_attributes
   end
 
   it "renders the edit assessment form" do
     render
 
     assert_select "form[action=?][method=?]", assessment_path(assessment), "post" do
-      # since student_id and weeks are already predetermined upon creation of student, these fields are not available on the edit form.    
+      # since student_id and weeks are already predetermined upon creation of student, these fields are not available on the edit form.
       # assert_select "input[name=?]", "assessment[student_id]"
       # assert_select "input[name=?]", "assessment[week]"
 
