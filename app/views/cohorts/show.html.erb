@@ -13,11 +13,13 @@
     <div>
       <%= form_with url: import_students_path, method: :post, multipart: true do |form| %>
         <label class="btn btn-primary">
-        Select File
-        <%= form.file_field :file, accept: ".csv", class: "hidden" %>
+        <%= form.file_field :file, accept: ".csv" %>
         </label>
+        <%if @file == true%>
+          <div>"rat"</div>
+        <% end %>
         <%= form.hidden_field :current_cohort_id, value: @cohort.id %>
-        <%= form.button t("import_student_csv"), class: "btn btn-primary" %>
+        <%= form.button t("upload_student_csv"), class: "btn btn-primary" %>
         <%= link_to t("edit"), edit_cohort_path(@cohort), class: "btn btn-white" %>
       <% end %>
     </div>

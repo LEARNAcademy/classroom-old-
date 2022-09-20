@@ -43,7 +43,8 @@ en:
   processing: "Processing..."
   something_went_wrong: "Something went wrong"
   unauthorized: "You are not authorized to perform this action."
-  import_student_csv: "Add Students via CSV"
+  select_student_csv: "Select Students CSV:"
+  upload_student_csv: "Upload Students CSV"
 
   account_invitations_mailer:
     invite:

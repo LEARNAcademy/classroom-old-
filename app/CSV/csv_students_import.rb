@@ -1,5 +1,5 @@
 class CsvStudentsImport
-  require 'csv'
+  require "csv"
 
   def call(file, cohort)
     file = File.open(file)
