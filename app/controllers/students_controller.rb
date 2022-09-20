@@ -47,11 +47,19 @@ class StudentsController < ApplicationController
     end
   end
 
+  def import_error
+    return redirect_to request.referrer, notice: "Please select a CSV file to upload" unless @file == true
+  end
+
   def import
     file = params[:file]
     @file = file
     cohort = params[:current_cohort_id]
-    return redirect_to cohorts_path, notice: "You can only post CSV files" unless file.content_type == "text/csv"
+    if @file.nil?
+      return redirect_to request.referrer, notice: "Please select a CSV file to upload"
+    elsif file.content_type != "text/csv"
+      return redirect_to cohorts_path, notice: "You can only post CSV files"
+    end
     CsvStudentsImport.new.call(file, cohort)
     redirect_to request.referrer, notice: "Students Successfully Imported"
   end
