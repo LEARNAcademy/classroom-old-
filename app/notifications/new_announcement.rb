@@ -1,7 +1,7 @@
 # To deliver this notification:
 #
 # NewAnnouncement.with(post: @post).deliver_later(current_user)
-# NewAnnouncement.with(post: @post).deliver(current_user)
+# NewAnnouncement.with(post: @post).deliver(User.all)
 
 class NewAnnouncement < ApplicationNotification
   # Database delivery is already added in ApplicationNotification
@@ -15,7 +15,7 @@ class NewAnnouncement < ApplicationNotification
 
   # Add required params
   #
-  # param :post
+  param :post
 
   # Define helper methods to make rendering easier.
   #
@@ -36,6 +36,9 @@ class NewAnnouncement < ApplicationNotification
     {
       account_id: record.account_id,
       html: ApplicationController.render(partial: "notifications/notification", locals: {notification: record})
+      # browser: {
+      #   title: "",
+      #   options: {}
     }
   end
 end
