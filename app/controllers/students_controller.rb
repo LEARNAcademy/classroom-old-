@@ -82,8 +82,8 @@ class StudentsController < ApplicationController
   end
 
   def create_assessments
-    (0..5).map do |i|
-      @student.assessments.create({week: i + 1, comprehension: 0, status: 0, reviewer: "N/A", notes: "N/A"})
+    (1..6).map do |i|
+      @student.assessments.create({week: i, comprehension: 0, status: 0, reviewer: "N/A", notes: "N/A"})
     end
   end
 
