@@ -8,13 +8,21 @@
       <%= @cohort.cohort_name %>
       <%= @cohort.year%>
     </h1>
-    <%= link_to "Edit Cohort", edit_cohort_path(@cohort), class: "btn btn-primary" %>
+    <div>
+      <%= form_with url: import_students_path, method: :post, multipart: true do |form| %>
+        <label class="btn btn-primary">
+        <%= t('select_student_csv') %>
+        <%= form.file_field :file, accept: ".csv", class: 'hidden' %>
+        </label>
+        <%= form.hidden_field :current_cohort_id, value: @cohort.id %>
+        <%= form.button t("upload_student_csv"), class: "btn btn-primary" %>
+        <%= link_to t("edit"), edit_cohort_path(@cohort), class: "btn btn-white" %>
+      <% end %>
+    </div>
   </div>
-  <%= link_to "Back to cohorts", cohorts_path %>
-
-
-  
-  
+  <div> 
+    <%= link_to "Back to cohorts", cohorts_path %>
+  </div>
   <div class="p-8 bg-white rounded shadow">
     <div class="text-2xl"> Students </div>
     <table class="border-separate border-spacing-x-10 text-center">
