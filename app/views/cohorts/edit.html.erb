@@ -3,13 +3,18 @@
 <div class="container mx-auto px-4 my-8">
   <div class="flex items-center justify-between mb-4">
     <h1 class="h3">
-      <%= link_to "Cohorts", cohorts_path, class: "text-black" %>
-      <span class="text-gray-400 font-light mx-2">\</span>
-      <%= t("shared.scaffold.edit.title", model: "Cohort") %>
+       Edit 
+       <span class="text-gray-400 font-light mx-2">\</span>
+        <%= @cohort.cohort_name %>
+       <span class="text-gray-400 font-light mx-2">\</span>
+       <%= @cohort.year %>
     </h1>
-    <%= button_to t("delete"), @cohort, method: :delete, class: "btn btn-white", form: { data: { turbo_confirm: t("are_you_sure") } } %>
+    <%= button_to t("delete.current_cohort_del"), @cohort, method: :delete, class: "btn btn-white", form: { data: { turbo_confirm: t("are_you_sure") } } %>
   </div>
 
+  <div class="flex items-center justify-between mb-2">
+    <%= link_to t("back.current_cohort"), cohort_path(@cohort), class: "text-black" %>
+  </div>
   <div class="p-8 bg-white rounded shadow">
     <%= render "form", cohort: @cohort %>
   </div>

@@ -1,5 +1,6 @@
 class StudentsController < ApplicationController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
+  after_action :create_assessments, only: [:create]
 
   # Uncomment to enforce Pundit authorization
   # after_action :verify_authorized
@@ -97,9 +98,15 @@ class StudentsController < ApplicationController
     redirect_to students_path
   end
 
+  def create_assessments
+    (1..6).map do |i|
+      @student.assessments.create({week: i, comprehension: 0, status: 0, reviewer: "N/A", notes: "N/A"})
+    end
+  end
+
   # Only allow a list of trusted parameters through.
   def student_params
-    params.require(:student).permit(:cohort_id, :pref_name, :absences)
+    params.require(:student).permit(:cohort_id, :pref_name, :absences, assessments_attributes: [:id, :week, :comprehension, :status, :reviewer, :notes])
 
     # Uncomment to use Pundit permitted attributes
     # params.require(:student).permit(policy(@student).permitted_attributes)

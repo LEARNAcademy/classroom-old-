@@ -5,20 +5,24 @@
   <div class="flex items-center justify-between mb-4">
     <div>
       <h1 class="h3">Cohorts</h1>
-
-      <div class="text-sm font-medium">
-        <span class="text-gray-500">Sort by:</span>
-        <%= sortable @cohorts, :cohort_name, "Cohort", class: "text-gray-700 mr-1" %>
-        <%= sortable @cohorts, :year, "Year", class: "text-gray-700 mr-1" %>
-      </div>
     </div>
 
     <%= link_to t("shared.scaffold.new.title", model: "Cohort"), new_cohort_path, class: "btn btn-primary" %>
   </div>
 
-  <%= tag.div id: ("cohorts" if first_page?), class: "bg-white rounded-md shadow p-6 space-y-8" do %>
+  <%= tag.div id: ("cohorts" if first_page?), class: "bg-white rounded-md shadow p-6 space-y-8 border-2" do %>
+  <table class="items-start table-fixed border-separate border-spacing-x-5 text-center">
+    <thead>
+      <tr>
+        <th class="min-w-[10vw]"><%= sortable @cohorts, :cohort_name, "Cohort", class: "text-xl text-gray-700 mr-1" %></th>
+        <th class=" min-w-[10vw]"><%= sortable @cohorts, :year, "Year", class: "text-xl text-gray-700 mr-1" %></th>
+        <th class=" min-w-[10vw]"> </th>
+      </tr>
+    </thead>
+    <tbody>
     <%= render partial: "cohorts/index", collection: @cohorts, as: :cohort, cached: true %>
-
+    <tbody>
+    </table>
     <div class="hidden only:flex flex-col items-center justify-between lg:flex-row">
       <div class="flex-1 text-center">
         <p class="mb-4 h3">Create your first Cohort</p>

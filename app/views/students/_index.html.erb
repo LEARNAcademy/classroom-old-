@@ -1,6 +1,7 @@
 <div id="<%= dom_id(student, :index) %>">
   <%= turbo_stream_from student %>
-  <%= render student %>
-  <%= link_to "View", student, class: "btn btn-white" %>
+    <tr>
+      <%= render student %>
+    </tr>
 </div>
 
