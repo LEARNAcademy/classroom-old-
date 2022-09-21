@@ -1,15 +1,9 @@
-<div id="<%= dom_id student %>">
-  <div class="mb-4">
-    <p class="text-sm font-medium text-gray-500">Name</p>
-    <%= student.pref_name %>
-  </div>
-  <div class="mb-4">
-    <p class="text-sm font-medium text-gray-500">Cohort</p>
-    <%= Cohort.where(id: student.cohort_id).pluck(:cohort_name)[0] %>
-    
-  </div>
-  <div class="mb-4">
-    <p class="text-sm font-medium text-gray-500">Absences</p>
+  <td>
+    <%= link_to student.pref_name , student %>
+  </td>
+  <td>
+    <%= student.cohort.cohort_name %>
+  </td>
+  <td>
     <%= student.absences %>
-  </div>
-</div>
+  </td>

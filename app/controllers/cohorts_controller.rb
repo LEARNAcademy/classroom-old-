@@ -15,6 +15,7 @@ class CohortsController < ApplicationController
 
   # GET /cohorts/1 or /cohorts/1.json
   def show
+    @pagy, @students = pagy(@students.sort_by_params(params[:sort], sort_direction))
   end
 
   # GET /cohorts/new
@@ -74,7 +75,7 @@ class CohortsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_cohort
     @cohort = Cohort.find(params[:id])
-
+    @students = Cohort.find(params[:id]).students
     # Uncomment to authorize with Pundit
     # authorize @cohort
   rescue ActiveRecord::RecordNotFound

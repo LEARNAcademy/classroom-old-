@@ -4,14 +4,17 @@
 <div class="container px-4 mx-auto my-8">
   <div class="flex items-center justify-between mb-4">
     <h1 class="h3">
-      <%= link_to "Students", students_path, class: "text-black" %>
-      <span class="text-gray-400 font-light mx-2">\</span>
-      <%= @student.pref_name %>
+      Student Info
     </h1>
-    <%= link_to t("edit"), edit_student_path(@student), class: "btn btn-white" %>
+    <%= link_to "Edit Student", edit_student_path(@student), class: "btn btn-primary" %>
   </div>
+  <%= link_to "Back to students", students_path %>
 
   <div class="p-8 bg-white rounded shadow">
-    <%= render @student %>
+    <div> Name: <%= @student.pref_name %> </div>
+    <div> Cohort: <%= @student.cohort.cohort_name %> <%= @student.cohort.year%> </div>
+    <div> Absences: <%= @student.absences %> </div>
+
+    
   </div>
 </div>

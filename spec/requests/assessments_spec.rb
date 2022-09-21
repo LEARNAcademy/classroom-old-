@@ -12,9 +12,9 @@ require "rails_helper"
 # of tools you can use to make these specs even more expressive, but we're
 # sticking to rails and rspec-rails APIs to keep things simple and stable.
 
-RSpec.describe "/students", type: :request do
+RSpec.describe "/assessments", type: :request do
   # This should return the minimal set of attributes required to create a valid
-  # Student. As you add validations to Student, be sure to
+  # Assessment. As you add validations to Assessment, be sure to
   # adjust the attributes here as well.
   let(:valid_attributes) {
     skip("Add a hash of attributes valid for your model")
@@ -26,60 +26,59 @@ RSpec.describe "/students", type: :request do
 
   describe "GET /index" do
     it "renders a successful response" do
-      Student.create! valid_attributes
-      get students_url
+      Assessment.create! valid_attributes
+      get assessments_url
       expect(response).to be_successful
     end
   end
 
   describe "GET /show" do
     it "renders a successful response" do
-      student = Student.create! valid_attributes
-      get student_url(student)
+      assessment = Assessment.create! valid_attributes
+      get assessment_url(assessment)
       expect(response).to be_successful
     end
   end
 
   describe "GET /new" do
     it "renders a successful response" do
-      # This student needed to be created for the test because there was no other way to authenticate login status for now. Since this application is a work in progress and the database models have not been finalized, this test will need to be modified at a later time.
-      student = Student.create! valid_attributes
-      get new_student_url(student)
+      assessment = Assessment.create! valid_attributes
+      get new_assessment_url(assessment)
       expect(response).to be_successful
     end
   end
 
   describe "GET /edit" do
     it "renders a successful response" do
-      student = Student.create! valid_attributes
-      get edit_student_url(student)
+      assessment = Assessment.create! valid_attributes
+      get edit_assessment_url(assessment)
       expect(response).to be_successful
     end
   end
 
   describe "POST /create" do
     context "with valid parameters" do
-      it "creates a new Student" do
+      it "creates a new Assessment" do
         expect {
-          post students_url, params: {student: valid_attributes}
-        }.to change(Student, :count).by(1)
+          post assessments_url, params: {assessment: valid_attributes}
+        }.to change(Assessment, :count).by(1)
       end
 
-      it "redirects to the created student" do
-        post students_url, params: {student: valid_attributes}
-        expect(response).to redirect_to(student_url(Student.last))
+      it "redirects to the created assessment" do
+        post assessments_url, params: {assessment: valid_attributes}
+        expect(response).to redirect_to(assessment_url(Assessment.last))
       end
     end
 
     context "with invalid parameters" do
-      it "does not create a new Student" do
+      it "does not create a new Assessment" do
         expect {
-          post students_url, params: {student: invalid_attributes}
-        }.to change(Student, :count).by(0)
+          post assessments_url, params: {assessment: invalid_attributes}
+        }.to change(Assessment, :count).by(0)
       end
 
       it "renders a successful response (i.e. to display the 'new' template)" do
-        post students_url, params: {student: invalid_attributes}
+        post assessments_url, params: {assessment: invalid_attributes}
         expect(response).to be_successful
       end
     end
@@ -91,42 +90,42 @@ RSpec.describe "/students", type: :request do
         skip("Add a hash of attributes valid for your model")
       }
 
-      it "updates the requested student" do
-        student = Student.create! valid_attributes
-        patch student_url(student), params: {student: new_attributes}
-        student.reload
+      it "updates the requested assessment" do
+        assessment = Assessment.create! valid_attributes
+        patch assessment_url(assessment), params: {assessment: new_attributes}
+        assessment.reload
         skip("Add assertions for updated state")
       end
 
-      it "redirects to the student" do
-        student = Student.create! valid_attributes
-        patch student_url(student), params: {student: new_attributes}
-        student.reload
-        expect(response).to redirect_to(student_url(student))
+      it "redirects to the assessment" do
+        assessment = Assessment.create! valid_attributes
+        patch assessment_url(assessment), params: {assessment: new_attributes}
+        assessment.reload
+        expect(response).to redirect_to(assessment_url(assessment))
       end
     end
 
     context "with invalid parameters" do
       it "renders a successful response (i.e. to display the 'edit' template)" do
-        student = Student.create! valid_attributes
-        patch student_url(student), params: {student: invalid_attributes}
+        assessment = Assessment.create! valid_attributes
+        patch assessment_url(assessment), params: {assessment: invalid_attributes}
         expect(response).to be_successful
       end
     end
   end
 
   describe "DELETE /destroy" do
-    it "destroys the requested student" do
-      student = Student.create! valid_attributes
+    it "destroys the requested assessment" do
+      assessment = Assessment.create! valid_attributes
       expect {
-        delete student_url(student)
-      }.to change(Student, :count).by(-1)
+        delete assessment_url(assessment)
+      }.to change(Assessment, :count).by(-1)
     end
 
-    it "redirects to the students list" do
-      student = Student.create! valid_attributes
-      delete student_url(student)
-      expect(response).to redirect_to(students_url)
+    it "redirects to the assessments list" do
+      assessment = Assessment.create! valid_attributes
+      delete assessment_url(assessment)
+      expect(response).to redirect_to(assessments_url)
     end
   end
 end
