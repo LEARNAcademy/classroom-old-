@@ -1,0 +1,26 @@
+<div id="<%= dom_id assessment %>">
+  <div class="mb-4">
+    <p class="text-sm font-medium text-gray-500">Student</p>
+    <%= Student.find(assessment.student_id).pref_name %>
+  </div>
+  <div class="mb-4">
+    <p class="text-sm font-medium text-gray-500">Week</p>
+    <%= assessment.week %>
+  </div>
+  <div class="mb-4">
+    <p class="text-sm font-medium text-gray-500">Status</p>
+    <%= assessment.status.titleize %>
+  </div>
+  <div class="mb-4">
+    <p class="text-sm font-medium text-gray-500">Comprehension</p>
+    <%= assessment.comprehension.titleize %>
+  </div>
+  <div class="mb-4">
+    <p class="text-sm font-medium text-gray-500">Reviewer</p>
+    <%= assessment.reviewer %>
+  </div>
+  <div class="mb-4">
+    <p class="text-sm font-medium text-gray-500">Notes</p>
+    <%= assessment.notes %>
+  </div>
+</div>
