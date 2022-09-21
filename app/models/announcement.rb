@@ -13,8 +13,6 @@
 class Announcement < ApplicationRecord
   TYPES = %w[new fix improvement update]
 
-  belongs_to :user
-
   has_rich_text :description
 
   validates :kind, :title, :description, :published_at, presence: true
@@ -22,7 +20,7 @@ class Announcement < ApplicationRecord
   after_initialize :set_defaults
 
   has_noticed_notifications model_name: 'Notification'
-  has_many :notifications, through: :user, dependent: :destroy
+  has_many :notifications, dependent: :destroy
 
   after_create_commit :notify_recipient
   before_destroy :cleanup_notifications

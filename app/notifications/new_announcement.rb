@@ -15,7 +15,7 @@ class NewAnnouncement < ApplicationNotification
 
   # Add required params
   #
-  param :announcement, :user
+  # param :announcement
 
   # Define helper methods to make rendering easier.
   #
@@ -28,7 +28,7 @@ class NewAnnouncement < ApplicationNotification
   def url
     # You can use any URL helpers here such as:
     # post_path(params[:post])
-    root_path
+    announcements_path
   end
 
   # Include account_id to make sure notification only triggers if user is signed in to that account
