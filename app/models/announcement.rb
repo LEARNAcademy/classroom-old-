@@ -19,7 +19,7 @@ class Announcement < ApplicationRecord
 
   after_initialize :set_defaults
 
-  has_noticed_notifications model_name: 'Notification'
+  has_noticed_notifications model_name: "Notification"
   has_many :notifications, dependent: :destroy
 
   after_create_commit :notify_recipient
