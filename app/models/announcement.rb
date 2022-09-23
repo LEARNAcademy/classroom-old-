@@ -19,6 +19,22 @@ class Announcement < ApplicationRecord
 
   after_initialize :set_defaults
 
+  has_noticed_notifications model_name: "Notification"
+  has_many :notifications, dependent: :destroy
+
+  after_create_commit :notify_recipient
+  before_destroy :cleanup_notifications
+
+  private
+
+  def notify_recipient
+    NewAnnouncement.with(announcement: self).deliver_later(User.all)
+  end
+
+  def cleanup_notifications
+    notifications_as_announcment.destroy_all
+  end
+
   def set_defaults
     self.published_at ||= Time.current
   end

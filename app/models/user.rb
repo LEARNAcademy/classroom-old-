@@ -66,6 +66,7 @@ class User < ApplicationRecord
   has_one_attached :avatar
 
   # Associations
+  has_many :announcements, dependent: :destroy
   has_many :api_tokens, dependent: :destroy
   has_many :notifications, as: :recipient, dependent: :destroy
   has_many :notification_tokens, dependent: :destroy
