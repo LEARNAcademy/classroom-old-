@@ -15,7 +15,7 @@ gem "rails", "~> 7.0.0"
 # gem "pry-rails"
 gem "administrate", github: "excid3/administrate", branch: "jumpstart" # '~> 0.10.0'
 gem "administrate-field-active_storage", "~> 0.4.1"
-gem "administrate-field-nested_has_many", git: 'https://github.com/nickcharlton/administrate-field-nested_has_many.git'
+gem "administrate-field-nested_has_many", git: "https://github.com/nickcharlton/administrate-field-nested_has_many.git"
 gem "annotate", github: "excid3/annotate_models", branch: "rails7", group: %i[development test]
 gem "bootsnap", require: false
 gem "capybara", ">= 3.26", group: [:test]

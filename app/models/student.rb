@@ -34,8 +34,8 @@ class Student < ApplicationRecord
   before_validation :invite_user, on: :create
 
   def invite_user
-    if self.user&.email.present? && self.user&.id.blank?
-      self.user = User.invite!(email: self.user.email, name: self.user.name)
+    if user&.email.present? && user&.id.blank?
+      self.user = User.invite!(email: user.email, name: user.name)
     end
   end
 end

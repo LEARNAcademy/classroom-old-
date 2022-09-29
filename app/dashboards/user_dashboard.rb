@@ -79,7 +79,7 @@ class UserDashboard < Administrate::BaseDashboard
     :invitation_accepted_at,
     :invitation_limit,
     :invitations_count,
-    :students,
+    :students
   ].freeze
 
   # FORM_ATTRIBUTES
