@@ -3,15 +3,14 @@ require "rails_helper"
 RSpec.describe "students/edit", type: :view do
   before(:each) do
     @cohort = assign(:cohort, Cohort.create(
-      id: 1,
       cohort_name: "Cohort Name",
       year: 1990
     ))
     @student = assign(:student, Student.create!(
-      cohort: nil,
+      cohort: @cohort,
       absences: 1,
-      cohort_id: 1,
-      pref_name: "John Doe"
+      pref_name: "John Doe",
+      user_attributes: {email: "test@example.com", name: "Test User"}
     ))
   end
 

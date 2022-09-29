@@ -11,6 +11,18 @@
     <%= form.select :cohort_id, options_for_select(Cohort.all.map{|cohort| [cohort.cohort_name, cohort.id]}) , prompt: "Select a Cohort", class: "form-control" %>
   </div>
 
+  <%= form.fields_for :user do |user_form| %>
+    <div class="form-group">
+
+      <%= user_form.label :email %>
+      <%= user_form.text_field :email %>
+    </div>
+    <div class="form-group">
+      <%= user_form.label :name %>
+      <%= user_form.text_field :name %>
+    </div>
+  <% end %>
+
   <div class="form-group">
     <%= form.label :absences %>
     <%= form.number_field :absences, :value => 0, class: "form-control" %>

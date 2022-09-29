@@ -15,6 +15,7 @@ gem "rails", "~> 7.0.0"
 # gem "pry-rails"
 gem "administrate", github: "excid3/administrate", branch: "jumpstart" # '~> 0.10.0'
 gem "administrate-field-active_storage", "~> 0.4.1"
+gem "administrate-field-nested_has_many", git: "https://github.com/nickcharlton/administrate-field-nested_has_many.git"
 gem "annotate", github: "excid3/annotate_models", branch: "rails7", group: %i[development test]
 gem "bootsnap", require: false
 gem "capybara", ">= 3.26", group: [:test]
@@ -22,6 +23,7 @@ gem "cssbundling-rails"
 gem "debug", platforms: %i[mri mingw x64_mingw], group: %i[development test]
 gem "devise", "~> 4.8", ">= 4.8.1"
 gem "devise-i18n", "~> 1.10"
+gem "devise_invitable"
 gem "erb_lint", require: false, group: %i[development test]
 gem "factory_bot_rails", group: %i[development test]
 gem "faker", group: %i[development test]

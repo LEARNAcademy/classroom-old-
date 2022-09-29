@@ -2,14 +2,14 @@ require "rails_helper"
 
 RSpec.describe "students/new", type: :view do
   before(:each) do
-    assign(:cohort, Cohort.create(
+    @cohort = assign(:cohort, Cohort.create(
       id: 1
     ))
     assign(:student, Student.new(
-      cohort: nil,
+      cohort: @cohort,
       absences: 1,
       pref_name: "John Doe",
-      cohort_id: 1
+      user_attributes: {email: "test@example.com", name: "Test User"}
     ))
   end
 
