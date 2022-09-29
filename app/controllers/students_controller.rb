@@ -21,6 +21,7 @@ class StudentsController < ApplicationController
   # GET /students/new
   def new
     @student = Student.new
+    @student.build_user
 
     # Uncomment to authorize with Pundit
     # authorize @student
@@ -33,7 +34,9 @@ class StudentsController < ApplicationController
   # POST /students or /students.json
   def create
     @student = Student.new(student_params)
-
+    if @student.user
+      @student.user = User.invite!(email: @student.user.email, name: @student.user.name)
+    end
     # Uncomment to authorize with Pundit
     # authorize @student
 
@@ -106,7 +109,7 @@ class StudentsController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def student_params
-    params.require(:student).permit(:cohort_id, :pref_name, :absences, assessments_attributes: [:id, :week, :comprehension, :status, :reviewer, :notes])
+    params.require(:student).permit(:cohort_id, :pref_name, :absences, assessments_attributes: [:id, :week, :comprehension, :status, :reviewer, :notes], user_attributes: [:email, :name])
 
     # Uncomment to use Pundit permitted attributes
     # params.require(:student).permit(policy(@student).permitted_attributes)

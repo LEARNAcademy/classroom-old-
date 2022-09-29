@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   # Administrate
   authenticated :user, lambda { |u| u.admin? } do
     namespace :admin do
+      resources :students
       if defined?(Sidekiq)
         require "sidekiq/web"
         mount Sidekiq::Web => "/sidekiq"
