@@ -34,9 +34,6 @@ class StudentsController < ApplicationController
   # POST /students or /students.json
   def create
     @student = Student.new(student_params)
-    if @student.user
-      @student.user = User.invite!(email: @student.user.email, name: @student.user.name)
-    end
     # Uncomment to authorize with Pundit
     # authorize @student
 

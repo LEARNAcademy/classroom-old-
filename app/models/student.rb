@@ -30,4 +30,12 @@ class Student < ApplicationRecord
   after_destroy_commit -> { broadcast_remove_to :students, target: dom_id(self, :index) }
 
   accepts_nested_attributes_for :user
+
+  before_validation :invite_user, on: :create
+
+  def invite_user
+    if self.user&.email.present? && self.user&.id.blank?
+      self.user = User.invite!(email: self.user.email, name: self.user.name)
+    end
+  end
 end
